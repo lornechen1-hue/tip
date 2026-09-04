@@ -1,11 +1,11 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kakobuy Shipping Guide</title>
     <style>
+        /* ===== 原有样式 ===== */
         * {
             margin: 0;
             padding: 0;
@@ -189,6 +189,38 @@
             padding-top: 28px;
         }
 
+        /* ===== 新增：语言切换样式 ===== */
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e9edf2;
+        }
+        .language-switcher button {
+            background: #f1f5f9;
+            border: none;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #1e293b;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .language-switcher button:hover {
+            background: #e2e8f0;
+        }
+        .language-switcher button.active {
+            background: #0b1f3b;
+            color: white;
+        }
+        .language-switcher button .flag {
+            margin-right: 6px;
+        }
+
         @media (max-width: 640px) {
             .container {
                 padding: 28px 18px;
@@ -202,6 +234,9 @@
             .section-title {
                 font-size: 1.3rem;
             }
+            .language-switcher {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -209,167 +244,473 @@
 
 <div class="container">
 
-    <h1>📦 Kakobuy Shipping & Costs</h1>
-    <div class="subhead">
+    <!-- ===== 语言切换按钮 ===== -->
+    <div class="language-switcher">
+        <button class="active" data-lang="zh"><span class="flag">🇨🇳</span> 中文</button>
+        <button data-lang="en"><span class="flag">🇬🇧</span> English</button>
+        <button data-lang="es"><span class="flag">🇪🇸</span> Español</button>
+        <button data-lang="de"><span class="flag">🇩🇪</span> Deutsch</button>
+    </div>
+
+    <!-- ===== 所有内容 ===== -->
+    <h1 data-i18n="title">📦 Kakobuy Shipping &amp; Costs</h1>
+    <div class="subhead" data-i18n="subtitle">
         A Complete Guide for Users — practical tips to help you understand shipping and save money.
     </div>
 
-    <!-- 1. Estimator -->
+    <!-- 1 -->
     <div class="section">
         <div class="section-title">
-            <span class="icon">🔍</span> 1. Use the Shipping Estimator
+            <span class="icon">🔍</span> <span data-i18n="s1_title">1. Use the Shipping Estimator</span>
         </div>
-        <p>On the Kakobuy homepage, there's a shipping estimator at the top. Just enter your destination country to see an estimated cost and available shipping routes.</p>
-        <div class="card-note">
+        <p data-i18n="s1_text">On the Kakobuy homepage, there's a shipping estimator at the top. Just enter your destination country to see an estimated cost and available shipping routes.</p>
+        <div class="card-note" data-i18n="s1_note">
             ⚠️ <strong>Important:</strong> This is just a reference. The <strong>actual shipping cost is usually lower</strong> than the estimate.
         </div>
     </div>
 
     <hr />
 
-    <!-- 2. Rehearsal -->
+    <!-- 2 -->
     <div class="section">
         <div class="section-title">
-            <span class="icon">📐</span> 2. Always Do a “Rehearsal” Before Shipping
+            <span class="icon">📐</span> <span data-i18n="s2_title">2. Always Do a “Rehearsal” Before Shipping</span>
         </div>
-        <p>This is the most practical money‑saving feature on Kakobuy — but a lot of new users don't know about it.</p>
+        <p data-i18n="s2_text">This is the most practical money‑saving feature on Kakobuy — but a lot of new users don't know about it.</p>
         <ul style="margin:12px 0 12px 24px; list-style:disc; line-height:1.8;">
-            <li><strong>What it is:</strong> Before you officially ship your items, you can request a “Rehearsal”. The warehouse will measure the actual volume and weight of your package.</li>
-            <li><strong>Why it matters:</strong> Shipping is calculated based on real data, which can <strong>significantly reduce your costs</strong>.</li>
-            <li><strong>Cost:</strong> Only around 20 CNY (~$3 USD) — and you'll save way more than that on shipping.</li>
+            <li data-i18n="s2_li1"><strong>What it is:</strong> Before you officially ship your items, you can request a “Rehearsal”. The warehouse will measure the actual volume and weight of your package.</li>
+            <li data-i18n="s2_li2"><strong>Why it matters:</strong> Shipping is calculated based on real data, which can <strong>significantly reduce your costs</strong>.</li>
+            <li data-i18n="s2_li3"><strong>Cost:</strong> Only around 20 CNY (~$3 USD) — and you'll save way more than that on shipping.</li>
         </ul>
-        <div class="card-tip">
+        <div class="card-tip" data-i18n="s2_tip">
             💡 If you skip the rehearsal, you'll be charged based on estimated volume, which is often higher than the actual cost. <strong>Don't overpay!</strong>
         </div>
     </div>
 
     <hr />
 
-    <!-- 3. Sensitive Items -->
+    <!-- 3 -->
     <div class="section">
         <div class="section-title">
-            <span class="icon">⚡</span> 3. Sensitive Items = Higher Shipping Costs
+            <span class="icon">⚡</span> <span data-i18n="s3_title">3. Sensitive Items = Higher Shipping Costs</span>
         </div>
-        <p>If you're buying items with <strong>built‑in batteries</strong> (electronics, gadgets, etc.) or <strong>liquids</strong> (perfume, skincare, etc.), those are considered “sensitive goods.” They require special shipping routes, which are more expensive than standard routes.</p>
+        <p data-i18n="s3_text">If you're buying items with <strong>built‑in batteries</strong> (electronics, gadgets, etc.) or <strong>liquids</strong> (perfume, skincare, etc.), those are considered “sensitive goods.” They require special shipping routes, which are more expensive than standard routes.</p>
         <div style="background:#f1f5f9; border-radius:14px; padding:16px 20px; margin:16px 0;">
-            <p style="margin-bottom:8px;"><strong>Pro tip to save money:</strong></p>
+            <p style="margin-bottom:8px;" data-i18n="s3_protip_title"><strong>Pro tip to save money:</strong></p>
             <ul style="list-style:none; padding:0; margin:0;">
-                <li style="margin-bottom:4px;">❌ Don't pack sensitive items together with regular items (clothes, shoes, accessories) in one package.</li>
-                <li>✅ Split them into two separate packages: regular items go via the normal route, sensitive items go via the special route.</li>
+                <li style="margin-bottom:4px;" data-i18n="s3_protip_li1">❌ Don't pack sensitive items together with regular items (clothes, shoes, accessories) in one package.</li>
+                <li data-i18n="s3_protip_li2">✅ Split them into two separate packages: regular items go via the normal route, sensitive items go via the special route.</li>
             </ul>
         </div>
-        <p>This can actually <strong>lower your total shipping cost</strong> significantly.</p>
+        <p data-i18n="s3_text2">This can actually <strong>lower your total shipping cost</strong> significantly.</p>
     </div>
 
     <hr />
 
-    <!-- 4. Best Weight -->
+    <!-- 4 -->
     <div class="section">
         <div class="section-title">
-            <span class="icon">⚖️</span> 4. What's the Best Weight to Buy?
+            <span class="icon">⚖️</span> <span data-i18n="s4_title">4. What's the Best Weight to Buy?</span>
         </div>
         <div class="grid-2">
-            <div class="item">
+            <div class="item" data-i18n="s4_item1">
                 <strong>1‑2 kg</strong>
                 Not very cost‑effective. The shipping cost doesn't justify the value of the items — unless it's your <strong>first order</strong> and you're using a new‑user coupon.
             </div>
-            <div class="item" style="border-color:#e63946; background:#fef2f2;">
+            <div class="item" style="border-color:#e63946; background:#fef2f2;" data-i18n="s4_item2">
                 <strong>5‑12 kg <span class="badge">Sweet spot</span></strong>
                 Shipping cost per kg drops significantly, and you'll have access to more shipping coupons with better discounts.
             </div>
         </div>
-        <div class="card-note">
+        <div class="card-note" data-i18n="s4_note">
             ⚠️ <strong>Watch out:</strong> Shipping is calculated based on the <strong>greater of actual weight or volumetric weight</strong>. If you buy something bulky but lightweight (like a large plush toy), the shipping cost may be surprisingly high. For items like that, Kakobuy might not be your best option.
         </div>
     </div>
 
     <hr />
 
-    <!-- 5. Route -->
+    <!-- 5 -->
     <div class="section">
         <div class="section-title">
-            <span class="icon">✈️</span> 5. Which Shipping Route Should You Choose?
+            <span class="icon">✈️</span> <span data-i18n="s5_title">5. Which Shipping Route Should You Choose?</span>
         </div>
         <div class="table-wrap">
             <table>
                 <thead>
-                    <tr><th>Route</th><th>Pros</th><th>Cons</th></tr>
+                    <tr>
+                        <th data-i18n="s5_table_header_route">Route</th>
+                        <th data-i18n="s5_table_header_pros">Pros</th>
+                        <th data-i18n="s5_table_header_cons">Cons</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <tr><td><strong>EMS</strong></td><td>Cheaper</td><td>Slower</td></tr>
-                    <tr><td><strong>UPS / DHL</strong></td><td>Faster</td><td>More expensive</td></tr>
+                    <tr>
+                        <td><strong data-i18n="s5_table_ems">EMS</strong></td>
+                        <td data-i18n="s5_table_ems_pros">Cheaper</td>
+                        <td data-i18n="s5_table_ems_cons">Slower</td>
+                    </tr>
+                    <tr>
+                        <td><strong data-i18n="s5_table_ups">UPS / DHL</strong></td>
+                        <td data-i18n="s5_table_ups_pros">Faster</td>
+                        <td data-i18n="s5_table_ups_cons">More expensive</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
-        <p>If you're not in a rush, <strong>EMS</strong> is more budget‑friendly. If you need it fast, go with <strong>UPS / DHL</strong>.</p>
+        <p data-i18n="s5_text">If you're not in a rush, <strong>EMS</strong> is more budget‑friendly. If you need it fast, go with <strong>UPS / DHL</strong>.</p>
     </div>
 
     <hr />
 
-    <!-- 6. Coupons -->
+    <!-- 6 -->
     <div class="section">
         <div class="section-title">
-            <span class="icon">🎟️</span> 6. Coupon Tips
+            <span class="icon">🎟️</span> <span data-i18n="s6_title">6. Coupon Tips</span>
         </div>
         <ul style="margin:0 0 12px 24px; list-style:disc; line-height:1.8;">
-            <li>Each coupon can only be used <strong>once per account</strong>.</li>
-            <li>Need to place multiple orders? Simply <strong>create a new account</strong> — this allows you to reuse the same coupons. In a sense, it's unlimited.</li>
+            <li data-i18n="s6_li1">Each coupon can only be used <strong>once per account</strong>.</li>
+            <li data-i18n="s6_li2">Need to place multiple orders? Simply <strong>create a new account</strong> — this allows you to reuse the same coupons. In a sense, it's unlimited.</li>
         </ul>
-        <p>New users get the best coupon deals, so it's very friendly for first‑time orders.</p>
+        <p data-i18n="s6_text">New users get the best coupon deals, so it's very friendly for first‑time orders.</p>
     </div>
 
     <hr />
 
-    <!-- 7. Main Markets -->
+    <!-- 7 -->
     <div class="section">
         <div class="section-title">
-            <span class="icon">🌍</span> 7. Our Main Markets
+            <span class="icon">🌍</span> <span data-i18n="s7_title">7. Our Main Markets</span>
         </div>
-        <p>Kakobuy's strongest markets are:</p>
+        <p data-i18n="s7_text">Kakobuy's strongest markets are:</p>
         <div class="table-wrap">
             <table>
                 <thead>
-                    <tr><th>Region</th><th>Key Countries</th></tr>
+                    <tr>
+                        <th data-i18n="s7_table_header_region">Region</th>
+                        <th data-i18n="s7_table_header_countries">Key Countries</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <tr><td><strong>North America</strong></td><td>United States, Canada</td></tr>
-                    <tr><td><strong>South America</strong></td><td>Most countries</td></tr>
-                    <tr><td><strong>Europe</strong></td><td>Germany, UK, Romania, and most European countries</td></tr>
+                    <tr>
+                        <td><strong data-i18n="s7_table_na">North America</strong></td>
+                        <td data-i18n="s7_table_na_countries">United States, Canada</td>
+                    </tr>
+                    <tr>
+                        <td><strong data-i18n="s7_table_sa">South America</strong></td>
+                        <td data-i18n="s7_table_sa_countries">Most countries</td>
+                    </tr>
+                    <tr>
+                        <td><strong data-i18n="s7_table_eu">Europe</strong></td>
+                        <td data-i18n="s7_table_eu_countries">Germany, UK, Romania, and most European countries</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
-        <p>We're currently one of the <strong>most stable and widely recognized agents</strong> in these regions.</p>
+        <p data-i18n="s7_text2">We're currently one of the <strong>most stable and widely recognized agents</strong> in these regions.</p>
     </div>
 
     <hr />
 
-    <!-- 8. France & Spain -->
+    <!-- 8 -->
     <div class="section">
         <div class="section-title">
-            <span class="icon">🇫🇷🇪🇸</span> 8. What About France and Spain?
+            <span class="icon">🇫🇷🇪🇸</span> <span data-i18n="s8_title">8. What About France and Spain?</span>
         </div>
-        <p>France and Spain are not Kakobuy's primary markets at the moment. That doesn't mean we're worse than other agents — our service and pricing are competitive across all regions. If you're from France or Spain, you can still <strong>take full advantage of the new‑user coupons</strong>. It's worth a try!</p>
+        <p data-i18n="s8_text">France and Spain are not Kakobuy's primary markets at the moment. That doesn't mean we're worse than other agents — our service and pricing are competitive across all regions. If you're from France or Spain, you can still <strong>take full advantage of the new‑user coupons</strong>. It's worth a try!</p>
     </div>
 
     <hr />
 
     <!-- Final Summary -->
     <div class="highlight-box">
-        <h3>💡 Final Summary</h3>
+        <h3 data-i18n="summary_title">💡 Final Summary</h3>
         <ul>
-            <li>1‑2 kg isn't cost‑effective → <strong>5‑12 kg is the sweet spot</strong></li>
-            <li>Separate sensitive items from regular ones → <strong>save on shipping</strong></li>
-            <li>Always do a rehearsal → <strong>avoid overpaying</strong></li>
-            <li>Coupons are one‑time only → <strong>create new accounts for repeat purchases</strong></li>
-            <li>We're stable and trusted in most key markets → <strong>worth a shot</strong></li>
+            <li data-i18n="summary_li1">1‑2 kg isn't cost‑effective → <strong>5‑12 kg is the sweet spot</strong></li>
+            <li data-i18n="summary_li2">Separate sensitive items from regular ones → <strong>save on shipping</strong></li>
+            <li data-i18n="summary_li3">Always do a rehearsal → <strong>avoid overpaying</strong></li>
+            <li data-i18n="summary_li4">Coupons are one‑time only → <strong>create new accounts for repeat purchases</strong></li>
+            <li data-i18n="summary_li5">We're stable and trusted in most key markets → <strong>worth a shot</strong></li>
         </ul>
     </div>
 
-    <div class="footer-note">
+    <div class="footer-note" data-i18n="footer">
         If you have any questions, feel free to ask! 😊
     </div>
 
 </div>
+
+<!-- ============================================================ -->
+<!-- 多语言数据 -->
+<script>
+    const translations = {
+        zh: {
+            title: "📦 Kakobuy 运费与成本指南",
+            subtitle: "给用户的完整指南 — 实用的省钱技巧，帮你了解运费并节省开支。",
+            s1_title: "1. 使用运费估算器",
+            s1_text: "在 Kakobuy 首页顶部有一个运费估算器。只需输入目的国家/地区，即可查看预估运费和可用的运输路线。",
+            s1_note: "⚠️ <strong>重要提示：</strong> 这仅供参考。<strong>实际运费通常低于</strong> 估算值。",
+            s2_title: "2. 发货前务必进行“预打包”",
+            s2_text: "这是 Kakobuy 上最实用的省钱功能 — 但很多新用户不知道它。",
+            s2_li1: "<strong>是什么：</strong>在正式发货前，您可以申请“预打包”。仓库将测量您包裹的实际体积和重量。",
+            s2_li2: "<strong>为什么重要：</strong>运费根据实际数据计算，可以<strong>显著降低您的成本</strong>。",
+            s2_li3: "<strong>费用：</strong>仅约 20 元人民币 (~3 美元) — 而您在运费上省下的钱会多得多。",
+            s2_tip: "💡 如果您跳过预打包，将根据估算体积收费，这通常高于实际费用。<strong>不要多付钱！</strong>",
+            s3_title: "3. 敏感物品 = 更高的运费",
+            s3_text: "如果您购买带有<strong>内置电池</strong>（电子产品、小工具等）或<strong>液体</strong>（香水、护肤品等）的物品，这些被视为“敏感货物”。它们需要特殊的运输路线，比标准路线更昂贵。",
+            s3_protip_title: "<strong>省钱小贴士：</strong>",
+            s3_protip_li1: "❌ 不要将敏感物品与普通物品（衣服、鞋子、配饰）打包在一起。",
+            s3_protip_li2: "✅ 将它们分成两个独立的包裹：普通物品走正常路线，敏感物品走特殊路线。",
+            s3_text2: "这实际上可以<strong>大幅降低您的总运费</strong>。",
+            s4_title: "4. 最佳购买重量是多少？",
+            s4_item1: "<strong>1‑2 公斤</strong> 性价比不高。运费无法体现物品价值 — 除非是您的<strong>首单</strong>并且使用了新用户优惠券。",
+            s4_item2: "<strong>5‑12 公斤 <span class=\"badge\">最佳区间</span></strong> 每公斤运费显著下降，并且您可以使用更多运费优惠券，享受更好的折扣。",
+            s4_note: "⚠️ <strong>注意：</strong> 运费按<strong>实际重量或体积重量中较大者</strong>计算。如果您购买体积大但重量轻的物品（如大型毛绒玩具），运费可能会出乎意料地高。对于这类物品，Kakobuy 可能不是最佳选择。",
+            s5_title: "5. 应选择哪条运输路线？",
+            s5_table_header_route: "路线",
+            s5_table_header_pros: "优点",
+            s5_table_header_cons: "缺点",
+            s5_table_ems: "EMS",
+            s5_table_ems_pros: "更便宜",
+            s5_table_ems_cons: "较慢",
+            s5_table_ups: "UPS / DHL",
+            s5_table_ups_pros: "更快",
+            s5_table_ups_cons: "更贵",
+            s5_text: "如果不赶时间，<strong>EMS</strong> 更经济实惠。如果需要快速收到，则选择 <strong>UPS / DHL</strong>。",
+            s6_title: "6. 优惠券使用技巧",
+            s6_li1: "每张优惠券每个账户只能使用<strong>一次</strong>。",
+            s6_li2: "需要多次下单？只需<strong>创建新账户</strong> — 这样您就可以重复使用相同的优惠券。从某种意义上说，它是无限的。",
+            s6_text: "新用户可获得最佳优惠券优惠，因此对首次下单非常友好。",
+            s7_title: "7. 我们的主要市场",
+            s7_text: "Kakobuy 最强的市场是：",
+            s7_table_header_region: "地区",
+            s7_table_header_countries: "主要国家",
+            s7_table_na: "北美",
+            s7_table_na_countries: "美国，加拿大",
+            s7_table_sa: "南美",
+            s7_table_sa_countries: "大多数国家",
+            s7_table_eu: "欧洲",
+            s7_table_eu_countries: "德国、英国、罗马尼亚及大多数欧洲国家",
+            s7_text2: "我们目前是这些地区<strong>最稳定、最受认可的代理之一</strong>。",
+            s8_title: "8. 法国和西班牙呢？",
+            s8_text: "法国和西班牙目前不是 Kakobuy 的主要市场。但这并不意味着我们比其他代理差 — 我们的服务和定价在所有地区都具有竞争力。如果您来自法国或西班牙，您仍然可以<strong>充分利用新用户优惠券</strong>。值得一试！",
+            summary_title: "💡 最终总结",
+            summary_li1: "1‑2 公斤不划算 → <strong>5‑12 公斤是最佳区间</strong>",
+            summary_li2: "将敏感物品与普通物品分开 → <strong>节省运费</strong>",
+            summary_li3: "始终进行预打包 → <strong>避免多付款</strong>",
+            summary_li4: "优惠券仅限一次使用 → <strong>创建新账户用于重复购买</strong>",
+            summary_li5: "我们在大多数关键市场稳定可靠 → <strong>值得一试</strong>",
+            footer: "如有任何疑问，请随时提问！😊"
+        },
+        en: {
+            title: "📦 Kakobuy Shipping & Costs",
+            subtitle: "A Complete Guide for Users — practical tips to help you understand shipping and save money.",
+            s1_title: "1. Use the Shipping Estimator",
+            s1_text: "On the Kakobuy homepage, there's a shipping estimator at the top. Just enter your destination country to see an estimated cost and available shipping routes.",
+            s1_note: "⚠️ <strong>Important:</strong> This is just a reference. The <strong>actual shipping cost is usually lower</strong> than the estimate.",
+            s2_title: "2. Always Do a “Rehearsal” Before Shipping",
+            s2_text: "This is the most practical money‑saving feature on Kakobuy — but a lot of new users don't know about it.",
+            s2_li1: "<strong>What it is:</strong> Before you officially ship your items, you can request a “Rehearsal”. The warehouse will measure the actual volume and weight of your package.",
+            s2_li2: "<strong>Why it matters:</strong> Shipping is calculated based on real data, which can <strong>significantly reduce your costs</strong>.",
+            s2_li3: "<strong>Cost:</strong> Only around 20 CNY (~$3 USD) — and you'll save way more than that on shipping.",
+            s2_tip: "💡 If you skip the rehearsal, you'll be charged based on estimated volume, which is often higher than the actual cost. <strong>Don't overpay!</strong>",
+            s3_title: "3. Sensitive Items = Higher Shipping Costs",
+            s3_text: "If you're buying items with <strong>built‑in batteries</strong> (electronics, gadgets, etc.) or <strong>liquids</strong> (perfume, skincare, etc.), those are considered “sensitive goods.” They require special shipping routes, which are more expensive than standard routes.",
+            s3_protip_title: "<strong>Pro tip to save money:</strong>",
+            s3_protip_li1: "❌ Don't pack sensitive items together with regular items (clothes, shoes, accessories) in one package.",
+            s3_protip_li2: "✅ Split them into two separate packages: regular items go via the normal route, sensitive items go via the special route.",
+            s3_text2: "This can actually <strong>lower your total shipping cost</strong> significantly.",
+            s4_title: "4. What's the Best Weight to Buy?",
+            s4_item1: "<strong>1‑2 kg</strong> Not very cost‑effective. The shipping cost doesn't justify the value of the items — unless it's your <strong>first order</strong> and you're using a new‑user coupon.",
+            s4_item2: "<strong>5‑12 kg <span class=\"badge\">Sweet spot</span></strong> Shipping cost per kg drops significantly, and you'll have access to more shipping coupons with better discounts.",
+            s4_note: "⚠️ <strong>Watch out:</strong> Shipping is calculated based on the <strong>greater of actual weight or volumetric weight</strong>. If you buy something bulky but lightweight (like a large plush toy), the shipping cost may be surprisingly high. For items like that, Kakobuy might not be your best option.",
+            s5_title: "5. Which Shipping Route Should You Choose?",
+            s5_table_header_route: "Route",
+            s5_table_header_pros: "Pros",
+            s5_table_header_cons: "Cons",
+            s5_table_ems: "EMS",
+            s5_table_ems_pros: "Cheaper",
+            s5_table_ems_cons: "Slower",
+            s5_table_ups: "UPS / DHL",
+            s5_table_ups_pros: "Faster",
+            s5_table_ups_cons: "More expensive",
+            s5_text: "If you're not in a rush, <strong>EMS</strong> is more budget‑friendly. If you need it fast, go with <strong>UPS / DHL</strong>.",
+            s6_title: "6. Coupon Tips",
+            s6_li1: "Each coupon can only be used <strong>once per account</strong>.",
+            s6_li2: "Need to place multiple orders? Simply <strong>create a new account</strong> — this allows you to reuse the same coupons. In a sense, it's unlimited.",
+            s6_text: "New users get the best coupon deals, so it's very friendly for first‑time orders.",
+            s7_title: "7. Our Main Markets",
+            s7_text: "Kakobuy's strongest markets are:",
+            s7_table_header_region: "Region",
+            s7_table_header_countries: "Key Countries",
+            s7_table_na: "North America",
+            s7_table_na_countries: "United States, Canada",
+            s7_table_sa: "South America",
+            s7_table_sa_countries: "Most countries",
+            s7_table_eu: "Europe",
+            s7_table_eu_countries: "Germany, UK, Romania, and most European countries",
+            s7_text2: "We're currently one of the <strong>most stable and widely recognized agents</strong> in these regions.",
+            s8_title: "8. What About France and Spain?",
+            s8_text: "France and Spain are not Kakobuy's primary markets at the moment. That doesn't mean we're worse than other agents — our service and pricing are competitive across all regions. If you're from France or Spain, you can still <strong>take full advantage of the new‑user coupons</strong>. It's worth a try!",
+            summary_title: "💡 Final Summary",
+            summary_li1: "1‑2 kg isn't cost‑effective → <strong>5‑12 kg is the sweet spot</strong>",
+            summary_li2: "Separate sensitive items from regular ones → <strong>save on shipping</strong>",
+            summary_li3: "Always do a rehearsal → <strong>avoid overpaying</strong>",
+            summary_li4: "Coupons are one‑time only → <strong>create new accounts for repeat purchases</strong>",
+            summary_li5: "We're stable and trusted in most key markets → <strong>worth a shot</strong>",
+            footer: "If you have any questions, feel free to ask! 😊"
+        },
+        es: {
+            title: "📦 Guía de Envíos y Costos de Kakobuy",
+            subtitle: "Guía completa para usuarios — consejos prácticos para ayudarte a entender los envíos y ahorrar dinero.",
+            s1_title: "1. Usa el Estimador de Envíos",
+            s1_text: "En la página principal de Kakobuy hay un estimador de envíos en la parte superior. Solo ingresa tu país de destino para ver un costo estimado y las rutas disponibles.",
+            s1_note: "⚠️ <strong>Importante:</strong> Esto es solo una referencia. El <strong>costo real de envío suele ser menor</strong> que el estimado.",
+            s2_title: "2. Haz Siempre un “Ensayo” Antes de Enviar",
+            s2_text: "Esta es la función más práctica para ahorrar dinero en Kakobuy, pero muchos usuarios nuevos no la conocen.",
+            s2_li1: "<strong>¿Qué es?</strong> Antes de enviar oficialmente tus artículos, puedes solicitar un “Ensayo”. El almacén medirá el volumen y peso reales de tu paquete.",
+            s2_li2: "<strong>¿Por qué importa?</strong> El envío se calcula con datos reales, lo que puede <strong>reducir significativamente tus costos</strong>.",
+            s2_li3: "<strong>Costo:</strong> Solo unos 20 CNY (~$3 USD) — y ahorrarás mucho más que eso en el envío.",
+            s2_tip: "💡 Si omites el ensayo, se te cobrará según el volumen estimado, que suele ser más alto que el costo real. <strong>¡No pagues de más!</strong>",
+            s3_title: "3. Artículos Sensibles = Mayores Costos de Envío",
+            s3_text: "Si compras artículos con <strong>baterías integradas</strong> (electrónicos, gadgets, etc.) o <strong>líquidos</strong> (perfumes, cosméticos, etc.), se consideran “mercancías sensibles”. Requieren rutas especiales, que son más caras que las rutas estándar.",
+            s3_protip_title: "<strong>Consejo para ahorrar dinero:</strong>",
+            s3_protip_li1: "❌ No empaques artículos sensibles junto con artículos normales (ropa, zapatos, accesorios) en un solo paquete.",
+            s3_protip_li2: "✅ Divídelos en dos paquetes separados: los artículos normales van por la ruta normal, los sensibles por la ruta especial.",
+            s3_text2: "Esto puede <strong>reducir significativamente tu costo total de envío</strong>.",
+            s4_title: "4. ¿Cuál es el Mejor Peso para Comprar?",
+            s4_item1: "<strong>1‑2 kg</strong> No es muy rentable. El costo de envío no justifica el valor de los artículos — a menos que sea tu <strong>primer pedido</strong> y uses un cupón de nuevo usuario.",
+            s4_item2: "<strong>5‑12 kg <span class=\"badge\">Punto óptimo</span></strong> El costo por kg disminuye considerablemente y tendrás acceso a más cupones de envío con mejores descuentos.",
+            s4_note: "⚠️ <strong>Ojo:</strong> El envío se calcula basado en el <strong>mayor entre el peso real y el peso volumétrico</strong>. Si compras algo voluminoso pero ligero (como un peluche grande), el costo de envío puede ser sorprendentemente alto. Para ese tipo de artículos, Kakobuy podría no ser tu mejor opción.",
+            s5_title: "5. ¿Qué Ruta de Envío Debes Elegir?",
+            s5_table_header_route: "Ruta",
+            s5_table_header_pros: "Ventajas",
+            s5_table_header_cons: "Desventajas",
+            s5_table_ems: "EMS",
+            s5_table_ems_pros: "Más barato",
+            s5_table_ems_cons: "Más lento",
+            s5_table_ups: "UPS / DHL",
+            s5_table_ups_pros: "Más rápido",
+            s5_table_ups_cons: "Más caro",
+            s5_text: "Si no tienes prisa, <strong>EMS</strong> es más económico. Si necesitas rapidez, elige <strong>UPS / DHL</strong>.",
+            s6_title: "6. Consejos sobre Cupones",
+            s6_li1: "Cada cupón solo se puede usar <strong>una vez por cuenta</strong>.",
+            s6_li2: "¿Necesitas hacer varios pedidos? Simplemente <strong>crea una nueva cuenta</strong> — esto te permite reutilizar los mismos cupones. En cierto sentido, es ilimitado.",
+            s6_text: "Los nuevos usuarios obtienen las mejores ofertas de cupones, por lo que es muy amigable para los primeros pedidos.",
+            s7_title: "7. Nuestros Mercados Principales",
+            s7_text: "Los mercados más fuertes de Kakobuy son:",
+            s7_table_header_region: "Región",
+            s7_table_header_countries: "Países clave",
+            s7_table_na: "América del Norte",
+            s7_table_na_countries: "Estados Unidos, Canadá",
+            s7_table_sa: "América del Sur",
+            s7_table_sa_countries: "La mayoría de los países",
+            s7_table_eu: "Europa",
+            s7_table_eu_countries: "Alemania, Reino Unido, Rumania y la mayoría de los países europeos",
+            s7_text2: "Actualmente somos uno de los <strong>agentes más estables y reconocidos</strong> en estas regiones.",
+            s8_title: "8. ¿Qué pasa con Francia y España?",
+            s8_text: "Francia y España no son los mercados principales de Kakobuy en este momento. Eso no significa que seamos peores que otros agentes — nuestro servicio y precios son competitivos en todas las regiones. Si eres de Francia o España, aún puedes <strong>aprovechar al máximo los cupones de nuevo usuario</strong>. ¡Vale la pena intentarlo!",
+            summary_title: "💡 Resumen Final",
+            summary_li1: "1‑2 kg no es rentable → <strong>5‑12 kg es el punto óptimo</strong>",
+            summary_li2: "Separa los artículos sensibles de los normales → <strong>ahorra en envío</strong>",
+            summary_li3: "Siempre haz un ensayo → <strong>evita pagar de más</strong>",
+            summary_li4: "Los cupones son de un solo uso → <strong>crea nuevas cuentas para compras repetidas</strong>",
+            summary_li5: "Somos estables y confiables en la mayoría de los mercados clave → <strong>vale la pena probar</strong>",
+            footer: "Si tienes alguna pregunta, ¡no dudes en preguntar! 😊"
+        },
+        de: {
+            title: "📦 Kakobuy Versand- und Kostenleitfaden",
+            subtitle: "Ein vollständiger Leitfaden für Benutzer — praktische Tipps, um den Versand zu verstehen und Geld zu sparen.",
+            s1_title: "1. Nutzen Sie den Versandkostenrechner",
+            s1_text: "Auf der Kakobuy-Startseite gibt es oben einen Versandkostenrechner. Geben Sie einfach Ihr Zielland ein, um geschätzte Kosten und verfügbare Versandwege zu sehen.",
+            s1_note: "⚠️ <strong>Wichtig:</strong> Dies dient nur als Referenz. Die <strong>tatsächlichen Versandkosten sind in der Regel niedriger</strong> als die Schätzung.",
+            s2_title: "2. Führen Sie vor dem Versand immer eine „Probe“ durch",
+            s2_text: "Dies ist die praktischste Funktion zum Geldsparen bei Kakobuy — aber viele neue Benutzer kennen sie nicht.",
+            s2_li1: "<strong>Was es ist:</strong> Bevor Sie Ihre Artikel offiziell versenden, können Sie eine „Probe“ anfordern. Das Lager misst das tatsächliche Volumen und Gewicht Ihres Pakets.",
+            s2_li2: "<strong>Warum es wichtig ist:</strong> Der Versand wird auf Basis realer Daten berechnet, was Ihre <strong>Kosten erheblich senken</strong> kann.",
+            s2_li3: "<strong>Kosten:</strong> Nur etwa 20 CNY (~3 USD) — und Sie sparen viel mehr als das beim Versand.",
+            s2_tip: "💡 Wenn Sie die Probe überspringen, werden Ihnen geschätzte Volumina berechnet, die oft höher sind als die tatsächlichen Kosten. <strong>Zahlen Sie nicht zu viel!</strong>",
+            s3_title: "3. Empfindliche Artikel = Höhere Versandkosten",
+            s3_text: "Wenn Sie Artikel mit <strong>eingebauten Batterien</strong> (Elektronik, Gadgets usw.) oder <strong>Flüssigkeiten</strong> (Parfüm, Hautpflege usw.) kaufen, gelten diese als „empfindliche Güter“. Sie benötigen spezielle Versandwege, die teurer sind als Standardwege.",
+            s3_protip_title: "<strong>Profitipp zum Geldsparen:</strong>",
+            s3_protip_li1: "❌ Packen Sie empfindliche Artikel nicht mit normalen Artikeln (Kleidung, Schuhe, Accessoires) in ein Paket.",
+            s3_protip_li2: "✅ Teilen Sie sie in zwei separate Pakete auf: normale Artikel über den normalen Weg, empfindliche über den speziellen Weg.",
+            s3_text2: "Dies kann Ihre <strong>Gesamtversandkosten erheblich senken</strong>.",
+            s4_title: "4. Was ist das beste Gewicht zum Kaufen?",
+            s4_item1: "<strong>1‑2 kg</strong> Nicht sehr kosteneffizient. Die Versandkosten rechtfertigen nicht den Wert der Artikel — es sei denn, es ist Ihre <strong>erste Bestellung</strong> und Sie verwenden einen Neukunden-Gutschein.",
+            s4_item2: "<strong>5‑12 kg <span class=\"badge\">Sweet Spot</span></strong> Die Versandkosten pro kg sinken erheblich, und Sie haben Zugang zu mehr Versandgutscheinen mit besseren Rabatten.",
+            s4_note: "⚠️ <strong>Achtung:</strong> Der Versand wird basierend auf dem <strong>höheren Wert von tatsächlichem Gewicht oder Volumengewicht</strong> berechnet. Wenn Sie etwas sperriges aber leichtes kaufen (wie ein großes Plüschtier), können die Versandkosten überraschend hoch sein. Für solche Artikel ist Kakobuy möglicherweise nicht die beste Wahl.",
+            s5_title: "5. Welchen Versandweg sollten Sie wählen?",
+            s5_table_header_route: "Weg",
+            s5_table_header_pros: "Vorteile",
+            s5_table_header_cons: "Nachteile",
+            s5_table_ems: "EMS",
+            s5_table_ems_pros: "Günstiger",
+            s5_table_ems_cons: "Langsamer",
+            s5_table_ups: "UPS / DHL",
+            s5_table_ups_pros: "Schneller",
+            s5_table_ups_cons: "Teurer",
+            s5_text: "Wenn Sie es nicht eilig haben, ist <strong>EMS</strong> günstiger. Wenn Sie es schnell brauchen, wählen Sie <strong>UPS / DHL</strong>.",
+            s6_title: "6. Gutscheintipps",
+            s6_li1: "Jeder Gutschein kann nur <strong>einmal pro Konto</strong> verwendet werden.",
+            s6_li2: "Mehrere Bestellungen aufgeben? Einfach <strong>ein neues Konto erstellen</strong> — so können Sie dieselben Gutscheine erneut verwenden. In gewissem Sinne ist es unbegrenzt.",
+            s6_text: "Neue Benutzer erhalten die besten Gutscheinangebote, daher ist es sehr freundlich für Erstbestellungen.",
+            s7_title: "7. Unsere Hauptmärkte",
+            s7_text: "Die stärksten Märkte von Kakobuy sind:",
+            s7_table_header_region: "Region",
+            s7_table_header_countries: "Wichtige Länder",
+            s7_table_na: "Nordamerika",
+            s7_table_na_countries: "USA, Kanada",
+            s7_table_sa: "Südamerika",
+            s7_table_sa_countries: "Die meisten Länder",
+            s7_table_eu: "Europa",
+            s7_table_eu_countries: "Deutschland, Großbritannien, Rumänien und die meisten europäischen Länder",
+            s7_text2: "Wir sind derzeit einer der <strong>stabilsten und bekanntesten Agenten</strong> in diesen Regionen.",
+            s8_title: "8. Was ist mit Frankreich und Spanien?",
+            s8_text: "Frankreich und Spanien sind derzeit nicht die Hauptmärkte von Kakobuy. Das bedeutet nicht, dass wir schlechter sind als andere Agenten — unser Service und unsere Preise sind in allen Regionen wettbewerbsfähig. Wenn Sie aus Frankreich oder Spanien kommen, können Sie dennoch <strong>die Neukunden-Gutscheine voll ausschöpfen</strong>. Es lohnt sich, es zu versuchen!",
+            summary_title: "💡 Abschließende Zusammenfassung",
+            summary_li1: "1‑2 kg sind nicht kosteneffizient → <strong>5‑12 kg ist der Sweet Spot</strong>",
+            summary_li2: "Trennen Sie empfindliche Artikel von normalen → <strong>sparen Sie beim Versand</strong>",
+            summary_li3: "Führen Sie immer eine Probe durch → <strong>vermeiden Sie Überzahlung</strong>",
+            summary_li4: "Gutscheine sind einmalig → <strong>neue Konten für wiederholte Käufe anlegen</strong>",
+            summary_li5: "Wir sind in den meisten wichtigen Märkten stabil und vertrauenswürdig → <strong>einen Versuch wert</strong>",
+            footer: "Bei Fragen zögern Sie nicht zu fragen! 😊"
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const langButtons = document.querySelectorAll('.language-switcher button');
+        let currentLang = 'zh'; // 默认中文
+
+        // 设置语言并更新界面
+        function setLanguage(lang) {
+            currentLang = lang;
+            // 更新按钮高亮
+            langButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+            // 遍历所有带 data-i18n 的元素，替换文本
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (translations[lang] && translations[lang][key] !== undefined) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        // 绑定按钮点击事件
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lang = this.dataset.lang;
+                if (lang !== currentLang) {
+                    setLanguage(lang);
+                }
+            });
+        });
+
+        // 默认加载中文 (或根据浏览器语言自动识别？这里固定中文)
+        setLanguage('zh');
+    });
+</script>
 
 </body>
 </html>
